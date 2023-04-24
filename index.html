@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management Portal</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/library.css">
+</head>
+<body>
+    <nav class="main_nav">
+        <ul>
+            <li><a href="#">Library Management Portal</a></li>
+           
+            <li><img src="..." alt="avatar"></li>
+        </ul>
+
+    </nav>
+
+    <main>
+        <nav class="sub_nav">
+            <ul>
+                <li><button class="btn btn-primary modal_btns" id="newMember">Register New Member</button></li>
+               
+                <li><button class="btn btn-primary modal_btns" id="borrowBook">Borrow A Book</button></li>
+            </ul>
+        </nav>
+        <h1 class="title-1">Registered Members</h1>
+        
+        <table>
+          <tr>
+            <th>Select</th>
+            <th>Name</th>
+            <th>Registration ID</th>
+            <th>Date Joined</th>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="select-item"></td>
+            <td><a href="#">John Doe</a></td>
+            <td>12345</td>
+            <td>January 1, 2022</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="select-item"></td>
+            <td><a href="#">Jane Doe</a></td>
+            <td>67890</td>
+            <td>February 14, 2022</td>
+          </tr>
+        </table>
+
+        <!-- New Member Modal -->
+        <div id="newMember_modal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Member</h2>
+            <form autocomplete="off">
+              <!---Use an input field with a hidden attribute. This hidden one -->
+              <label for="name">Full Name</label>
+              <input id="name" type="text" name="name" placeholder="Full name"><br>
+              
+              <label for="date_of_birth">Date of Birth</label>
+              <input id="date_of_birth" type="date" name="date_of_birth" placeholder="Date of Birth" value="Date of Birth"><br>
+              
+              <label for="phone">Phone Number</label>
+              <input id="phone" type="text" name="phone" placeholder="Phone Number"><br>
+              
+              <label for="email">Email</label>
+              <input id="email" type="email" name="email" placeholder="Email"><br>
+                
+              <label for="image">Chose Profile Photo</label>
+              <input id="image" type="file" name="image" placeholder="Add Profile Photo"><br>
+              <div class="output"></div><br>
+              
+              <label for="address">Address</label>
+              <input id="address" type="text" name="address" placeholder="Address"><br>
+              
+              <!-- <label for="gender">What's your gender?</label><br> -->
+              <select name="gender" id="gender">
+                <option value="default">Choose gender</option>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+              </select> <br>
+              <!-- <input type="radio" name="gender" value="male"> Male<br>
+              <input type="radio" name="gender" value="female"> Female<br>
+              <input type="radio" name="gender" value="other"> Other<br><br> -->
+              <input type="submit" value="Submit">
+            </form>
+          </div>
+        </div>
+
+         <!-- Borrow Book Modal -->
+         <div id="borrowBook_modal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2>Borrow Book Form</h2>
+              <form  autocomplete="off" id="borrow_book_form">
+        
+                <input id="borrower_id" type="text" name="borrower_id" placeholder="Enter Library ID"><br>
+                <span class="validate_borrower">Mzer Emmanuel Terdoo</span><br><br>
+                
+                <div id="first-form-group" class="form-group">
+                   <input id="book_name" class="autocomplete" type="text" name="book_name" placeholder="Start Typing Book shelf id or title ...">
+                   <div class="suggestions"></div>
+                   <!-- <input id="return_date" type="date" name="return_date" placeholder="Age"> -->
+                </div>
+
+                <br><span style="border:1px solid gray; padding: 5px;" id="add_book">Add Another Book</span><br>
+              
+                <input type="submit" value="Submit">
+              </form>
+            </div>
+          </div>
+    </main>
+  
+
+    <!-- <script src="script/index.js"></script> -->
+    <script type="module" src="script/index2.js"></script>
+    <script type="module" src="script/autocomplete.js"></script>
+</body>
+</html>

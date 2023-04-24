@@ -1,0 +1,12 @@
+Todo list
+
+#html Todo
+
+#Css Todo
+
+#Js Todo
+
+In the books table, set an isBorrowed flag (true / false) on each book.
+This is so that when someone is borowing, then only books available show
+on the drop down
+This data shows how many books are available in the library at any given time

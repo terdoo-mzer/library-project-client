@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Management Portal</title>
+  <!-- Alertify CSS -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+  <!-- Default theme -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+  <!-- Semantic UI theme -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css" />
+  <!-- Bootstrap theme -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
+  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="/styles/library.css">
+  <script src="https://kit.fontawesome.com/6f44ec60a1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav class="main_nav">
+    <ul>
+      <li><a href="#">Library Management Portal</a></li>
+
+      <li><img src="" alt="avatar"></li>
+    </ul>
+
+  </nav>
+
+  <main>
+    <h2>List Items in Table Format</h2>
+    <button class="btn btn-primary modal_btns" id="return_book">Return Selected Books</button>
+
+    <section id="member_dashboard">
+
+      <div id="dash_profile_area" class="member_dash_box">
+        <img src="/assets/images/avatar.png" alt="">
+        <div id="profile_details">
+          <p id="member_name">Mzer Emmanuel Terdoo</p>
+          <p id="library_id">Lib123456</p>
+          <p id="phone"><i class="fa-solid fa-phone"></i><span id="">08064901390</span></p>
+          <p id="email"><i class="fa-solid fa-square-envelope"></i><span id="">mzerterdoo6@gmail.com</span></p>
+          <p id="date_registerd"><i class="fa-solid fa-calendar-days"></i>Joined <span id="">12th March, 2021</span></p>
+        </div>
+      </div>
+
+      <div id="dash_books_area" class="member_dash_box">
+
+        <div class="table_header dashb_books_wrapper">
+          <h4 id="col_book_id">Book Reference</h4>
+          <h4 id="col_book_title">Book Title</h4>
+          <h4 id="col_date_borrowed">Date Borrowed</h4>
+          <h4 id="col_return_status">Return Status</h4>
+
+          <h4 id="col_action">Action</h4>
+          <h4 id="col_return_btn">Return</h4>
+        </div>
+
+        <div id="borrowed_book_details ">
+          <div id="123" data-id="123" data-book-title="The god's are not to blame"
+            class=" books_details dashb_books_wrapper">
+            <!----data-id attribute represents the serial id of the book
+                  borrowed. This is similar to book_id
+                
+                  Use timestamp to generate data-id-->
+            <div class="book_id">#1233456</div>
+            <div class="book_title">The god's are not to blame</div>
+            <div class="date_borrowed">30th May, 2023</div>
+            <div class="return_status_pill not_due">Not Due</div>
+
+            <div class="action">View Details</div>
+            <div class="return_btn_pill">Click To Return</div>
+          </div>
+
+          <div id="1234" data-id="1234" data-book-title="Things Fall apart" class="books_details dashb_books_wrapper">
+            <div data-id="12345" class="book_id">#1233456</div>
+            <div data-id="12345" class="book_title">Things Fall Apart</div>
+            <div data-id="12345" class="date_borrowed">30th May, 2023</div>
+            <div data-id="12345" class="return_status_pill not_due">Not Due</div>
+
+            <div data-id="12345" class="action">View Details</div>
+            <div data-id="12345" class="return_btn_pill">Click To Return</div>
+          </div>
+
+          <div id="12345" data-id="12345" data-book-title="Chike and the River"
+            class="books_details dashb_books_wrapper">
+            <div data-id="12345" class="book_id">#1233456</div>
+            <div data-id="12345" class="book_title">Chike and the River</div>
+            <div data-id="12345" class="date_borrowed">30th May, 2023</div>
+            <div data-id="12345" class="return_status_pill due">Due</div>
+
+            <div data-id="12345" class="action">View Details</div>
+            <div data-id="12345" class="return_btn_pill">Click To Return</div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- The Modal -->
+    <div id="return_book_modal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 style="text-align: center;">Book Return Modal</h2>
+        <p style="text-align: center;">Are you sure you want to return the underlisted books?</p>
+
+        <div id="books_to_return_wrap">
+
+        </div>
+
+        <div style="display:flex; justify-content: center; align-items: center;" id="return_btns">
+          <button id="confirm_return_btn">Go Ahead</button>
+          <button id="cancel_return_btn">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="book_detail_modal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Borrowed Book Details</h2>
+
+        <div class="book_details_mod_wrap">
+          <div class="book_details_name"><span>Book Name</span><span>The god's are not to blame</span></div>
+        </div>
+
+
+      </div>
+    </div>
+  </main>
+
+
+  <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script> <!--Alertify JS--->
+  <script src="script/index2.js"></script>
+</body>
+
+</html>
